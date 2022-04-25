@@ -94,7 +94,7 @@ def help_comm(message):
 
 
 @bot.message_handler(commands=["start"])
-def start(message):
+def start_comm(message):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.row(
         telebot.types.InlineKeyboardButton("Инфо", callback_data="get-info"),
