@@ -1,81 +1,42 @@
-# import logging
-# import datetime
-
-# import telebot
-# from telebot_calendar import Calendar, CallbackData, RUSSIAN_LANGUAGE
-
-# from telebot.types import ReplyKeyboardRemove, CallbackQuery
-
-# API_TOKEN = "5350243633:AAHUJfoTC5mh5cXsKhGq2Soz7sGUxibfSFg"
-# logger = telebot.logger
-# telebot.logger.setLevel(logging.WARNING)
-
-# bot = telebot.TeleBot(API_TOKEN)
-
-# # Creates a unique calendar
-# calendar = Calendar(language=RUSSIAN_LANGUAGE)
-# calendar_1_callback = CallbackData("calendar_1", "action", "year", "month", "day")
+# def keyboard(where_call):
+#     kb = types.InlineKeyboardMarkup()
+#     if where_call == 'start':
+#         kb_1 = types.InlineKeyboardButton(text='1_1_inline', callback_data='1_1_inline')
+#         kb.add(kb_1)
+#         return kb
+#     elif where_call == 'subcategory':
+#         kb_2 = types.InlineKeyboardButton(text='2_1_inline', callback_data='2_1_inline')
+#         kb.add(kb_2)
+#         return kb
+#     elif where_call == 'product':
+#         kb_3 = types.InlineKeyboardButton(text='3_1_inline', callback_data='3_1_inline')
+#         kb.add(kb_3)
+#         return kb
 
 
-# @bot.message_handler(commands=["start"])
-# def check_other_messages(message):
-#     """
-#     Catches a message with the command "start" and sends the calendar
-#     :param message:
-#     :return:
-#     """
-
-#     now = datetime.datetime.now()  # Get the current date
-#     bot.send_message(
-#         message.chat.id,
-#         "Selected date",
-#         reply_markup=calendar.create_calendar(
-#             name=calendar_1_callback.prefix,
-#             year=now.year,
-#             month=now.month,  # Specify the NAME of your calendar
-#         ),
-#     )
+# @bot.message_handler(commands=['start', 'help'])
+# def category(message):
+#     bot.reply_to(message, "Привет! Я помогу подобрать товар!", reply_markup=keyboard('start'))
 
 
-# @bot.callback_query_handler(
-#     func=lambda call: call.data.startswith(calendar_1_callback.prefix)
-# )
-# def callback_inline(call: CallbackQuery):
-#     """
-#     Обработка inline callback запросов
-#     :param call:
-#     :return:
-#     """
+# @bot.callback_query_handler(func=lambda call: True)
+# def callback_inline(call):
+#     if call.data == '1_1_inline':
+#         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+#                               text='подкатегория', reply_markup=keyboard('subcategory'))
+#     elif call.data == '2_1_inline':
+#         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+#                               text='товар', reply_markup=keyboard('product'))
+#     elif call.data == '3_1_inline':
+#         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,
+#                               text='Описание товара')
+#         bot.send_photo(call.message.chat.id,
+#                        'https://cs13.pikabu.ru/images/big_size_comm/2020-06_3/159194100716237333.jpg')
 
-#     # At this point, we are sure that this calendar is ours. So we cut the line by the separator of our calendar
-#     name, action, year, month, day = call.data.split(calendar_1_callback.sep)
-#     # Processing the calendar. Get either the date or None if the buttons are of a different type
-#     date = calendar.calendar_query_handler(
-#         bot=bot, call=call, name=name, action=action, year=year, month=month, day=day
-#     )
-#     # There are additional steps. Let's say if the date DAY is selected, you can execute your code. I sent a message.
-#     if action == "DAY":
-#         bot.send_message(
-#             chat_id=call.from_user.id,
-#             text=f"You have chosen {date.strftime('%d.%m.%Y')}",
-#             reply_markup=ReplyKeyboardRemove(),
-#         )
-#         print(f"{calendar_1_callback}: Day: {date.strftime('%d.%m.%Y')}")
-#     elif action == "CANCEL":
-#         bot.send_message(
-#             chat_id=call.from_user.id,
-#             text="Cancellation",
-#             reply_markup=ReplyKeyboardRemove(),
-#         )
-#         print(f"{calendar_1_callback}: Cancellation")
-
-
-# bot.polling(none_stop=True)
 
 import telebot
-from telebot import types
 from telebot_calendar import Calendar, RUSSIAN_LANGUAGE, CallbackData
-from telebot.types import ReplyKeyboardRemove, CallbackQuery
+from telebot.types import ReplyKeyboardRemove, CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 import datetime
 import telebot_calendar
 import logging
@@ -89,16 +50,16 @@ telebot.logger.setLevel(logging.WARNING)
 
 
 @bot.message_handler(commands=["help"])
-def help_comm(message):
+def help_cmd(message):
     bot.reply_to(message, "Тут будет описание команд и возможностей бота")
 
 
 @bot.message_handler(commands=["start"])
-def start_comm(message):
-    keyboard = telebot.types.InlineKeyboardMarkup()
+def start_cmd(message):
+    keyboard = InlineKeyboardMarkup(row_width=2)
     keyboard.row(
-        telebot.types.InlineKeyboardButton("Инфо", callback_data="get-info"),
-        telebot.types.InlineKeyboardButton("Записаться", callback_data="enroll"),
+        InlineKeyboardButton("Инфо", callback_data="get-info"),
+        InlineKeyboardButton("Записаться", callback_data="enroll_step_1"),
     )
     bot.send_message(
         message.chat.id,
@@ -108,13 +69,28 @@ def start_comm(message):
     )
 
 
-@bot.callback_query_handler(func=lambda call: call.data.startswith("enroll"))
+@bot.callback_query_handler(func=lambda call: call.data.startswith("enroll_step_1"))
 def cb_inline(call: CallbackQuery):
-    # print('=======================================')
-    # print(enroll_calendar.prefix)
-    # print('=======================================')
-
-    if call.data == "enroll":
+    if call.data == "enroll_step_1":
+        keyboard = InlineKeyboardMarkup(row_width=2)
+        keyboard.row(
+            InlineKeyboardButton("Приют 1", callback_data="pr1"),
+            InlineKeyboardButton("Приют 2", callback_data="pr2"),
+            InlineKeyboardButton("Приют 3", callback_data="pr3"),
+            InlineKeyboardButton("Приют 4", callback_data="pr4"),
+            InlineKeyboardButton("Приют 5", callback_data="pr5"),
+            InlineKeyboardButton("Приют 6", callback_data="pr6"),
+            InlineKeyboardButton("Приют 7", callback_data="pr7"),
+            InlineKeyboardButton("Приют 8", callback_data="pr8"),
+            InlineKeyboardButton("Записаться", callback_data="enroll"),
+        )
+        bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="Выбери интересующий тебя приют",
+            reply_markup=keyboard,
+        )
+    elif call.data == "enroll":
         now = datetime.datetime.now()
         bot.edit_message_text(
             chat_id=call.message.chat.id,
@@ -126,44 +102,25 @@ def cb_inline(call: CallbackQuery):
                 month=now.month,
             ),
         )
-        print('=======================================')
-        print(call.data)
-        print('=======================================')
+    elif call.data == "get-info":
+        pass
+    else:
         name, action, year, month, day = call.data.split(enroll_calendar.sep)
-        # Processing the calendar. Get either the date or None if the buttons are of a different type
-        date = telebot_calendar.calendar_query_handler(
-            bot=bot, call=call, name=name, action=action, year=year, month=month, day=day
-        )
-        # There are additional steps. Let's say if the date DAY is selected, you can execute your code.
+        date = cal.calendar_query_handler(bot=bot, call=call, name=name, action=action, year=year, month=month, day=day)
         if action == "DAY":
             bot.send_message(
                 chat_id=call.from_user.id,
-                text=f"You have chosen {date.strftime('%d.%m.%Y')}",
+                text=f"Вы записались на {date.strftime('%d.%m.%Y')}",
                 reply_markup=ReplyKeyboardRemove(),
             )
             print(f"{enroll_calendar}: Day: {date.strftime('%d.%m.%Y')}")
         elif action == "CANCEL":
             bot.send_message(
                 chat_id=call.from_user.id,
-                text="Cancellation",
+                text="Отмена",
                 reply_markup=ReplyKeyboardRemove(),
             )
             print(f"{enroll_calendar}: Cancellation")
 
 
-# @bot.callback_query_handler(
-#     func=lambda call: call.data.startswith(enroll_calendar.prefix)
-# )
-# def callback_inline(call: CallbackQuery):
-#     print('=======================================')
-#     print(f"{enroll_calendar}: Cancellation")
-#     print('=======================================')
-#     # At this point, we are sure that this calendar is ours. So we cut the line by the separator of our calendar
-
-
-def main():
-    bot.polling(non_stop=True)
-
-
-if __name__ == "__main__":
-    main()
+bot.polling(non_stop=True)
