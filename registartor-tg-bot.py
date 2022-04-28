@@ -44,6 +44,7 @@ from telebot.types import (
 )
 import datetime
 import logging
+import time
 
 token = "5350243633:AAHUJfoTC5mh5cXsKhGq2Soz7sGUxibfSFg"
 bot = telebot.TeleBot(token, parse_mode=None)
@@ -65,7 +66,7 @@ pr_list = {
 }
 
 
-def get_priyut_keyboard():
+def get_shelter_keyboard():
     keyboard = InlineKeyboardMarkup()
     keyboard.row(
         InlineKeyboardButton("Приют 1", callback_data="info_pr_1"),
@@ -104,7 +105,7 @@ def start_cmd(message):
     start_keyboard = InlineKeyboardMarkup(row_width=2)
     start_keyboard.row(
         InlineKeyboardButton("Инфо", callback_data="get-info"),
-        InlineKeyboardButton("Записаться", callback_data="enroll"),
+        InlineKeyboardButton("Записаться", callback_data="enroll_choose_shelter"),
     )
     if message.from_user.is_bot:
         bot.send_message(
@@ -123,7 +124,7 @@ def start_cmd(message):
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith("get-info"))
 def show_info_btn(call: CallbackQuery):
-    keyboard = get_priyut_keyboard()
+    keyboard = get_shelter_keyboard()
     bot.edit_message_text(
         chat_id=call.message.chat.id,
         message_id=call.message.message_id,
@@ -134,7 +135,7 @@ def show_info_btn(call: CallbackQuery):
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith("info_pr_"))
 def show_info(call: CallbackQuery):
-    keyboard = get_priyut_keyboard()
+    keyboard = get_shelter_keyboard()
     keyboard.row(InlineKeyboardButton("В начало", callback_data="info_pr_START"))
     if call.data == "info_pr_1":
         name = pr_list["pr1"]["name"]
@@ -212,10 +213,10 @@ def show_info(call: CallbackQuery):
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith("enroll"))
 def enroll_cb(call: CallbackQuery):
-    if call.data == "enroll_step_1":
-        keyboard = get_priyut_keyboard()
+    if call.data == "enroll_choose_shelter":
+        keyboard = get_shelter_keyboard()
         keyboard.row(
-            InlineKeyboardButton("Записаться", callback_data="enroll"),
+            InlineKeyboardButton("Записаться", callback_data="enroll_set_date"),
         )
         bot.edit_message_text(
             chat_id=call.message.chat.id,
@@ -223,7 +224,7 @@ def enroll_cb(call: CallbackQuery):
             text="Выбери интересующий тебя приют",
             reply_markup=keyboard,
         )
-    elif call.data == "enroll":
+    elif call.data == "enroll_set_date":
         now = datetime.datetime.now()
         bot.edit_message_text(
             chat_id=call.message.chat.id,
@@ -247,9 +248,11 @@ def enroll_cb(call: CallbackQuery):
             day=day,
         )
         if action == "DAY":
+            msg_datetime = datetime.datetime.fromtimestamp(call.message.date)
             bot.send_message(
                 chat_id=call.from_user.id,
-                text=f"Вы записались на {date.strftime('%d.%m.%Y')}",
+                text=f"{msg_datetime} Вы (id={call.message.chat.id} username={call.message.chat.username}) \
+записались на {date.strftime('%d.%m.%Y')}",
                 reply_markup=ReplyKeyboardRemove(),
             )
             print(f"{enroll_calendar}: Day: {date.strftime('%d.%m.%Y')}")
@@ -266,5 +269,5 @@ def main():
     bot.polling(non_stop=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
