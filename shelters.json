@@ -1,0 +1,90 @@
+{
+    "0": {
+        "name": "Верные Друзья",
+        "adress": "Москва, ул.Академика Королёва, 12",
+        "schedule": "По четвергам с 10 до 19",
+        "description": "Частный приют для домашних животных существует с 1998 года на средства организаторов и всех неравнодушных. Сегодня здесь живут почти 80 собак и кошек. Здесь принимают, лечат и спасают обездоленных животных, которые нуждаются в корме и лекарствах",
+        "contacts": "8(495)123-45-67, 8(903)234-56-78",
+        "sys_info":{
+            "callback_data_info": "info_shelter_1",
+            "callback_data_enroll": "enroll_shelter_1"
+        }
+    },
+    "1": {
+        "name": "Четыре лапы",
+        "adress": "Москва, ул.Академика Королёва, 12",
+        "schedule": "По четвергам с 10 до 19",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
+        "contacts": "8(495)123-45-67, 8(903)234-56-78",
+        "sys_info":{
+            "callback_data_info": "info_shelter_2",
+            "callback_data_enroll": "enroll_shelter_2"
+        }
+    },
+    "2": {
+        "name": "Дружок",
+        "adress": "Москва, ул.Академика Королёва, 12",
+        "schedule": "По четвергам с 10 до 19",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
+        "contacts": "8(495)123-45-67, 8(903)234-56-78",
+        "sys_info":{
+            "callback_data_info": "info_shelter_3",
+            "callback_data_enroll": "enroll_shelter_3"
+        }
+    },
+    "3": {
+        "name": "ЗВЕЗДА ПО ИМЕНИ ПЕКИНЕС",
+        "adress": "Москва, ул.Академика Королёва, 12",
+        "schedule": "По четвергам с 10 до 19",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
+        "contacts": "8(495)123-45-67, 8(903)234-56-78",
+        "sys_info":{
+            "callback_data_info": "info_shelter_4",
+            "callback_data_enroll": "enroll_shelter_4"
+        }
+    },
+    "4": {
+        "name": "ЧЕМПИОН МОЕГО СЕРДЦА",
+        "adress": "Москва, ул.Академика Королёва, 12",
+        "schedule": "По четвергам с 10 до 19",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
+        "contacts": "8(495)123-45-67, 8(903)234-56-78",
+        "sys_info":{
+            "callback_data_info": "info_shelter_5",
+            "callback_data_enroll": "enroll_shelter_5"
+        }
+    },
+    "5": {
+        "name": "КЛИН ТРИО",
+        "adress": "Москва, ул.Академика Королёва, 12",
+        "schedule": "По четвергам с 10 до 19",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
+        "contacts": "8(495)123-45-67, 8(903)234-56-78",
+        "sys_info":{
+            "callback_data_info": "info_shelter_6",
+            "callback_data_enroll": "enroll_shelter_6"
+        }
+    },
+    "6": {
+        "name": "VOM HAUS SCHLOSSER",
+        "adress": "Москва, ул.Академика Королёва, 12",
+        "schedule": "По четвергам с 10 до 19",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
+        "contacts": "8(495)123-45-67, 8(903)234-56-78",
+        "sys_info":{
+            "callback_data_info": "info_shelter_7",
+            "callback_data_enroll": "enroll_shelter_7"
+        }
+    },
+    "7": {
+        "name": "ЗВЁЗДНАЯ ПЫЛЬ",
+        "adress": "Москва, ул.Академика Королёва, 12",
+        "schedule": "По четвергам с 10 до 19",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
+        "contacts": "8(495)123-45-67, 8(903)234-56-78",
+        "sys_info":{
+            "callback_data_info": "info_shelter_8",
+            "callback_data_enroll": "enroll_shelter_8"
+        }
+    }
+}
