@@ -14,6 +14,8 @@ token = "5350243633:AAHUJfoTC5mh5cXsKhGq2Soz7sGUxibfSFg"
 bot = telebot.TeleBot(token, parse_mode=None)
 cal = Calendar(language=RUSSIAN_LANGUAGE)
 enroll_calendar = CallbackData("enroll_calendar", "action", "year", "month", "day")
+prev_callback_data_enroll = ""
+
 logger = telebot.logger
 telebot.logger.setLevel(logging.WARNING)
 
@@ -23,7 +25,7 @@ with open("shelters.json", "r", encoding="utf-8") as shelters_file:
 
 # def build_menu(buttons, n_cols, header_buttons=None, footer_buttons=None):
 def build_menu(buttons, n_cols):
-    return [buttons[i: i + n_cols] for i in range(0, len(buttons), n_cols)]
+    return [buttons[i : i + n_cols] for i in range(0, len(buttons), n_cols)]
     # if header_buttons:
     #     menu.insert(0, [header_buttons])
     # if footer_buttons:
@@ -56,6 +58,12 @@ def get_shelter_keyboard(shelters, cb_type):
         return keyboard
     else:
         print(""" cb_type should be "info" or "enroll" """)
+
+
+def find_shelter_via_cb_data_enroll(shelters, callback_data_enroll):
+    for shelter in shelters.values():
+        if shelter["sys_info"]["callback_data_enroll"] == callback_data_enroll:
+            return shelter["name"]
 
 
 @bot.message_handler(commands=["test-msg"])
@@ -140,7 +148,8 @@ def enroll_cb(call: CallbackQuery):
         )
     elif call.data in callback_data_enroll_list:
         now = datetime.datetime.now()
-        print(call)
+        global prev_callback_data_enroll
+        prev_callback_data_enroll = str(call.data)
         bot.edit_message_text(
             chat_id=call.message.chat.id,
             message_id=call.message.message_id,
@@ -164,10 +173,11 @@ def enroll_cb(call: CallbackQuery):
         )
         if action == "DAY":
             msg_datetime = datetime.datetime.fromtimestamp(call.message.date)
+            shelter_name = find_shelter_via_cb_data_enroll(shelters, prev_callback_data_enroll)
             bot.send_message(
                 chat_id=call.from_user.id,
                 text=f"{msg_datetime} Вы (id={call.message.chat.id} username={call.message.chat.username}) \
-записались на {date.strftime('%d.%m.%Y')} в питомник {call.data}",
+записались на {date.strftime('%d.%m.%Y')} в питомник {shelter_name}",
                 reply_markup=ReplyKeyboardRemove(),
             )
             print(f"{enroll_calendar}: Day: {date.strftime('%d.%m.%Y')}")
