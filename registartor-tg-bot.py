@@ -9,9 +9,13 @@ from telebot.types import (
 import datetime
 import logging
 import json
+import configparser
 
-token = "5350243633:AAHUJfoTC5mh5cXsKhGq2Soz7sGUxibfSFg"
-bot = telebot.TeleBot(token, parse_mode=None)
+
+config = configparser.ConfigParser()
+config.read("./settings.ini")
+TOKEN = config['Telegram']['token']
+bot = telebot.TeleBot(TOKEN, parse_mode=None)
 cal = Calendar(language=RUSSIAN_LANGUAGE)
 enroll_calendar = CallbackData("enroll_calendar", "action", "year", "month", "day")
 prev_callback_data_enroll = ""
@@ -25,7 +29,7 @@ with open("shelters.json", "r", encoding="utf-8") as shelters_file:
 
 # def build_menu(buttons, n_cols, header_buttons=None, footer_buttons=None):
 def build_menu(buttons, n_cols):
-    return [buttons[i : i + n_cols] for i in range(0, len(buttons), n_cols)]
+    return [buttons[i: i + n_cols] for i in range(0, len(buttons), n_cols)]
     # if header_buttons:
     #     menu.insert(0, [header_buttons])
     # if footer_buttons:
