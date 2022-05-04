@@ -163,5 +163,6 @@ sup*
 # VSCode
 
 .vscode/
+.dev_settings.ini
 
 
