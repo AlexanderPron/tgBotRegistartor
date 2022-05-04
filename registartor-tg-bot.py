@@ -10,11 +10,23 @@ import datetime
 import logging
 import json
 import configparser
+import os.path
 
-
+DEV_SETTINGS = "./dev_settings.ini"
+SETTINGS = "./settings.ini"
+CURR_SETTINGS = ""
 config = configparser.ConfigParser()
-config.read("./settings.ini")
-TOKEN = config['Telegram']['token']
+if os.path.isfile(DEV_SETTINGS):
+    config.read(DEV_SETTINGS)
+    CURR_SETTINGS = DEV_SETTINGS
+else:
+    config.read(SETTINGS)
+    CURR_SETTINGS = SETTINGS
+try:
+    TOKEN = config["Telegram"]["token"]
+except Exception:
+    print(f"Something wrong with {CURR_SETTINGS}")
+    exit()
 bot = telebot.TeleBot(TOKEN, parse_mode=None)
 cal = Calendar(language=RUSSIAN_LANGUAGE)
 enroll_calendar = CallbackData("enroll_calendar", "action", "year", "month", "day")
@@ -29,7 +41,7 @@ with open("shelters.json", "r", encoding="utf-8") as shelters_file:
 
 # def build_menu(buttons, n_cols, header_buttons=None, footer_buttons=None):
 def build_menu(buttons, n_cols):
-    return [buttons[i: i + n_cols] for i in range(0, len(buttons), n_cols)]
+    return [buttons[i : i + n_cols] for i in range(0, len(buttons), n_cols)]
     # if header_buttons:
     #     menu.insert(0, [header_buttons])
     # if footer_buttons:
