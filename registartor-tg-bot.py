@@ -72,8 +72,20 @@ def get_shelter_keyboard(shelters, cb_type):
             )
         keyboard = InlineKeyboardMarkup(build_menu(button_list, n_cols=2))
         return keyboard
+    elif cb_type == "schedule_link":
+        button_list = []
+        for shelter in shelters.values():
+            button_list.append(
+                InlineKeyboardButton(
+                    shelter["name"],
+                    callback_data=shelter["sys_info"]["callback_data_link"],
+                    url=shelter["schedule_link"],
+                )
+            )
+        keyboard = InlineKeyboardMarkup(build_menu(button_list, n_cols=2))
+        return keyboard
     else:
-        print(""" cb_type should be "info" or "enroll" """)
+        print(""" cb_type should be "info", "enroll" or "schedule_link" """)
 
 
 def find_shelter_via_cb_data_enroll(shelters, callback_data_enroll):
@@ -100,7 +112,8 @@ def start_cmd(message):
     start_keyboard = InlineKeyboardMarkup(row_width=2)
     start_keyboard.row(
         InlineKeyboardButton("Инфо", callback_data="info_get"),
-        InlineKeyboardButton("Записаться", callback_data="enroll_choose_shelter"),
+        # InlineKeyboardButton("Записаться", callback_data="enroll_choose_shelter"),
+        InlineKeyboardButton("Записаться", callback_data="link"),
     )
     if message.from_user.is_bot:
         bot.send_message(
@@ -149,61 +162,73 @@ def show_info(call: CallbackQuery):
         )
 
 
-@bot.callback_query_handler(func=lambda call: call.data.startswith("enroll"))
+@bot.callback_query_handler(func=lambda call: call.data.startswith("link"))
 def enroll_cb(call: CallbackQuery):
-    callback_data_enroll_list = []
-    for shelter in shelters.values():
-        callback_data_enroll_list.append(shelter["sys_info"]["callback_data_enroll"])
-    if call.data == "enroll_choose_shelter":
-        keyboard = get_shelter_keyboard(shelters, "enroll")
-        bot.edit_message_text(
-            chat_id=call.message.chat.id,
-            message_id=call.message.message_id,
-            text="Выбери интересующий тебя приют",
-            reply_markup=keyboard,
-        )
-    elif call.data in callback_data_enroll_list:
-        now = datetime.datetime.now()
-        global prev_callback_data_enroll
-        prev_callback_data_enroll = str(call.data)
-        bot.edit_message_text(
-            chat_id=call.message.chat.id,
-            message_id=call.message.message_id,
-            text="Выберите дату, когда Вам удобно было-бы посетить приют",
-            reply_markup=cal.create_calendar(
-                name=enroll_calendar.prefix,
-                year=now.year,
-                month=now.month,
-            ),
-        )
-    else:
-        name, action, year, month, day = call.data.split(enroll_calendar.sep)
-        date = cal.calendar_query_handler(
-            bot=bot,
-            call=call,
-            name=name,
-            action=action,
-            year=year,
-            month=month,
-            day=day,
-        )
-        if action == "DAY":
-            msg_datetime = datetime.datetime.fromtimestamp(call.message.date)
-            shelter_name = find_shelter_via_cb_data_enroll(shelters, prev_callback_data_enroll)
-            bot.send_message(
-                chat_id=call.from_user.id,
-                text=f"{msg_datetime} Вы (id={call.message.chat.id} username={call.message.chat.username}) \
-записались на {date.strftime('%d.%m.%Y')} в питомник {shelter_name}",
-                reply_markup=ReplyKeyboardRemove(),
-            )
-            print(f"{enroll_calendar}: Day: {date.strftime('%d.%m.%Y')}")
-        elif action == "CANCEL":
-            bot.send_message(
-                chat_id=call.from_user.id,
-                text="Отмена",
-                reply_markup=ReplyKeyboardRemove(),
-            )
-            print(f"{enroll_calendar}: Cancellation")
+    keyboard = get_shelter_keyboard(shelters, "schedule_link")
+    keyboard.row(InlineKeyboardButton("В начало", callback_data="info_shelter_START"))
+    bot.edit_message_text(
+        chat_id=call.message.chat.id,
+        message_id=call.message.message_id,
+        text="Выбери интересующий тебя приют",
+        reply_markup=keyboard,
+    )
+
+
+# @bot.callback_query_handler(func=lambda call: call.data.startswith("enroll"))
+# def enroll_cb(call: CallbackQuery):
+#     callback_data_enroll_list = []
+#     for shelter in shelters.values():
+#         callback_data_enroll_list.append(shelter["sys_info"]["callback_data_enroll"])
+#     if call.data == "enroll_choose_shelter":
+#         keyboard = get_shelter_keyboard(shelters, "enroll")
+#         bot.edit_message_text(
+#             chat_id=call.message.chat.id,
+#             message_id=call.message.message_id,
+#             text="Выбери интересующий тебя приют",
+#             reply_markup=keyboard,
+#         )
+#     elif call.data in callback_data_enroll_list:
+#         now = datetime.datetime.now()
+#         global prev_callback_data_enroll
+#         prev_callback_data_enroll = str(call.data)
+#         bot.edit_message_text(
+#             chat_id=call.message.chat.id,
+#             message_id=call.message.message_id,
+#             text="Выберите дату, когда Вам удобно было-бы посетить приют",
+#             reply_markup=cal.create_calendar(
+#                 name=enroll_calendar.prefix,
+#                 year=now.year,
+#                 month=now.month,
+#             ),
+#         )
+#     else:
+#         name, action, year, month, day = call.data.split(enroll_calendar.sep)
+#         date = cal.calendar_query_handler(
+#             bot=bot,
+#             call=call,
+#             name=name,
+#             action=action,
+#             year=year,
+#             month=month,
+#             day=day,
+#         )
+#         if action == "DAY":
+#             msg_datetime = datetime.datetime.fromtimestamp(call.message.date)
+#             shelter_name = find_shelter_via_cb_data_enroll(shelters, prev_callback_data_enroll)
+#             bot.send_message(
+#                 chat_id=call.from_user.id,
+#                 text=f"{msg_datetime} Вы (id={call.message.chat.id} username={call.message.chat.username}) \
+# записались на {date.strftime('%d.%m.%Y')} в питомник {shelter_name}",
+#                 reply_markup=ReplyKeyboardRemove(),
+#             )
+#             print(f"{enroll_calendar}: Day: {date.strftime('%d.%m.%Y')}")
+#         elif action == "CANCEL":
+#             bot.send_message(
+#                 chat_id=call.from_user.id,
+#                 text="Отмена",
+#                 reply_markup=ReplyKeyboardRemove(),
+#             )
+#             print(f"{enroll_calendar}: Cancellation")
 
 
 def main():
