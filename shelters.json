@@ -1,11 +1,11 @@
 {
     "0": {
-        "name": "Верные Друзья",
-        "adress": "Москва, ул.Академика Королёва, 12",
-        "schedule": "По четвергам с 10 до 19",
-        "description": "Частный приют для домашних животных существует с 1998 года на средства организаторов и всех неравнодушных. Сегодня здесь живут почти 80 собак и кошек. Здесь принимают, лечат и спасают обездоленных животных, которые нуждаются в корме и лекарствах",
-        "contacts": "8(495)123-45-67, 8(903)234-56-78",
-        "schedule_link": "http://yandex.ru",
+        "name": "Хаски Хелп",
+        "adress": "Московская область, Истринский район, д. Карцево, (Ориентир остановка д. Малое Ушаково)",
+        "schedule": "1-я суббота каждого месяца 11:00",
+        "description": "Здесь содержатся более 100 собак породы хаски, маламут и северная ездовая собака",
+        "contacts": "+7 (495) 908-58-59",
+        "schedule_link": "https://walkthedog.timepad.ru/event/1392743/",
         "sys_info": {
             "callback_data_info": "info_shelter_1",
             "callback_data_enroll": "enroll_shelter_1",
@@ -13,12 +13,12 @@
         }
     },
     "1": {
-        "name": "Четыре лапы",
-        "adress": "Москва, ул.Академика Королёва, 12",
-        "schedule": "По четвергам с 10 до 19",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
-        "contacts": "8(495)123-45-67, 8(903)234-56-78",
-        "schedule_link": "http://yandex.ru",
+        "name": "Приют \"Ника\"",
+        "adress": "г.Зеленоград. Более детальный адрес высылается по запросу!",
+        "schedule": "2-я суббота месяца 11:00",
+        "description": "Приют фонда находится на северо-западе Москвы. \"НИКА\"- это целый комплекс для бездомных и брошенных животных. Здесь созданы специальные условия для нахождения животных-инвалидов и содержатся 450 собак, а также несколько десятков кошек.",
+        "contacts": "+7 (499) 938-52-42, info@fond-nika.ru",
+        "schedule_link": "https://walkthedog.timepad.ru/event/1392863/",
         "sys_info": {
             "callback_data_info": "info_shelter_2",
             "callback_data_enroll": "enroll_shelter_2",
@@ -26,12 +26,12 @@
         }
     },
     "2": {
-        "name": "Дружок",
-        "adress": "Москва, ул.Академика Королёва, 12",
-        "schedule": "По четвергам с 10 до 19",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
-        "contacts": "8(495)123-45-67, 8(903)234-56-78",
-        "schedule_link": "http://yandex.ru",
+        "name": "Приют \"Шанс\"(Save Husky)",
+        "adress": "Узнать адрес и предупредить о приезде - Светлана (+7 916 230 87 86)",
+        "schedule": "2-е воскресенье месяца 11:00",
+        "description": "Приют на северо-востоке от Москвы в г. Щелково МО. Здесь находится 75 собак, из них 40 собак породы хаски, лайки, маламуты, которых курирует команда помощи Снежные хаски.",
+        "contacts": "+7 (962) 975-16-41  https://vk.com/save_husky",
+        "schedule_link": "https://walkthedog.timepad.ru/event/1567065/",
         "sys_info": {
             "callback_data_info": "info_shelter_3",
             "callback_data_enroll": "enroll_shelter_3",
@@ -39,12 +39,12 @@
         }
     },
     "3": {
-        "name": "ЗВЕЗДА ПО ИМЕНИ ПЕКИНЕС",
-        "adress": "Москва, ул.Академика Королёва, 12",
-        "schedule": "По четвергам с 10 до 19",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
-        "contacts": "8(495)123-45-67, 8(903)234-56-78",
-        "schedule_link": "http://yandex.ru",
+        "name": "Приют \"Домашний\"",
+        "adress": "Для уточнения информации пишите на почту takedog.ru@gmail.com или на WhatsApp 89055321236",
+        "schedule": "3-я суббота месяца 11:00",
+        "description": "Приют в Балашихе (микрорайон Салтыковка). Здесь находится реабилитационный центр для особых животных, а также обычные вольеры, в которых ждут свой дом около 200 собак",
+        "contacts": "WhatsApp 89055321236 takedog.ru@gmail.com",
+        "schedule_link": "https://walkthedog.timepad.ru/event/1481907/",
         "sys_info": {
             "callback_data_info": "info_shelter_4",
             "callback_data_enroll": "enroll_shelter_4",
