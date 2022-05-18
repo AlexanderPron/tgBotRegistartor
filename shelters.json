@@ -39,10 +39,10 @@
         }
     },
     "3": {
-        "name": "Приют \"Домашний\"",
-        "adress": "Для уточнения информации пишите на почту takedog.ru@gmail.com или на WhatsApp 89055321236",
+        "name": "Приют \"Домашний\" (Балашиха)",
+        "adress": "МО, г.Балашиха (микрорайон Салтыковка). Для уточнения информации пишите на почту takedog.ru@gmail.com или на WhatsApp 89055321236",
         "schedule": "3-я суббота месяца 11:00",
-        "description": "Приют в Балашихе (микрорайон Салтыковка). Здесь находится реабилитационный центр для особых животных, а также обычные вольеры, в которых ждут свой дом около 200 собак",
+        "description": "Здесь находится реабилитационный центр для особых животных, а также обычные вольеры, в которых ждут свой дом около 200 собак",
         "contacts": "WhatsApp 89055321236 takedog.ru@gmail.com",
         "schedule_link": "https://walkthedog.timepad.ru/event/1481907/",
         "sys_info": {
@@ -52,12 +52,12 @@
         }
     },
     "4": {
-        "name": "ЧЕМПИОН МОЕГО СЕРДЦА",
-        "adress": "Москва, ул.Академика Королёва, 12",
-        "schedule": "По четвергам с 10 до 19",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
-        "contacts": "8(495)123-45-67, 8(903)234-56-78",
-        "schedule_link": "http://yandex.ru",
+        "name": "Биозона",
+        "adress": "пгт Белоозерский, Воскресенский район Московской области, ул. Коммунальная, д.7",
+        "schedule": "3-я суббота месяца 11:00",
+        "description": "Приют - часть благотворительного фонда \"Биозона\" и является постоянным домом для более чем 50 животных.",
+        "contacts": "+7 (915) 149-05-46 (приют), +7 (965) 436-46-40 (фонд),  biozzonafund@yandex.ru",
+        "schedule_link": "https://walkthedog.timepad.ru/event/1845719/",
         "sys_info": {
             "callback_data_info": "info_shelter_5",
             "callback_data_enroll": "enroll_shelter_5",
@@ -65,12 +65,12 @@
         }
     },
     "5": {
-        "name": "КЛИН ТРИО",
-        "adress": "Москва, ул.Академика Королёва, 12",
-        "schedule": "По четвергам с 10 до 19",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
-        "contacts": "8(495)123-45-67, 8(903)234-56-78",
-        "schedule_link": "http://yandex.ru",
+        "name": "Приют \"Домашний\" (Аннино)",
+        "adress": "2 км от МКАД, 10 минут от м. Аннино",
+        "schedule": "4-я суббота месяца 11:00",
+        "description": "Здесь постоянно проживает более 700 собак и 100 кошек.",
+        "contacts": "takedog.ru@gmail.com",
+        "schedule_link": "https://walkthedog.timepad.ru/event/1392780/",
         "sys_info": {
             "callback_data_info": "info_shelter_6",
             "callback_data_enroll": "enroll_shelter_6",
@@ -78,12 +78,12 @@
         }
     },
     "6": {
-        "name": "VOM HAUS SCHLOSSER",
-        "adress": "Москва, ул.Академика Королёва, 12",
-        "schedule": "По четвергам с 10 до 19",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
-        "contacts": "8(495)123-45-67, 8(903)234-56-78",
-        "schedule_link": "http://yandex.ru",
+        "name": "Центр \"Мокрый нос\"",
+        "adress": "Солнечногорский район, деревня Брехово",
+        "schedule": "4-е воскресенье месяца 11:00",
+        "description": "Центр создан фондом \"Ника\" и является Многофункциональным центром помощи животным, попавшим в трудную ситуацию, рассчитанный на одновременное нахождение 500 хвостатых друзей.",
+        "contacts": "+7 (499) 938-52-42  info@fond-nika.ru",
+        "schedule_link": "https://walkthedog.timepad.ru/event/1933803/",
         "sys_info": {
             "callback_data_info": "info_shelter_7",
             "callback_data_enroll": "enroll_shelter_7",
@@ -91,12 +91,12 @@
         }
     },
     "7": {
-        "name": "ЗВЁЗДНАЯ ПЫЛЬ",
-        "adress": "Москва, ул.Академика Королёва, 12",
-        "schedule": "По четвергам с 10 до 19",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Cras vel elit sed mi placerat pharetra eget vel odio. Cras vel elit sed mi placerat pharetra eget vel odio. Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vitae varius ex, eu volutpat orci. Quisque vitae varius ex, eu volutpat orci. Duis ac nulla varius diam ultrices rutrum. Nullam tempus scelerisque purus, sed mattis elit condimentum nec. Cras erat dui, finibus vel lectus ac, pharetra dictum odio. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc. Quisque vitae varius ex, eu volutpat orci. Integer ultricies malesuada quam. Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
-        "contacts": "8(495)123-45-67, 8(903)234-56-78",
-        "schedule_link": "http://yandex.ru",
+        "name": "Зоотель \"Лемур\"",
+        "adress": "г. Воскресенск (80 км от МКАД по Новорязанское шоссе)",
+        "schedule": "По всем вопросам обращайтесь в телеграм чат https://t.me/walkthedog_lemur",
+        "description": "В районе нет приютов, а только стационары двух ветклиник. Здесь содержатся до 30 бездомных кошек и до 8 собак. Большинство имеют те или иные заболевания и травмы. В зоотеле животные проходят полный курс лечения и стерилизации. Кому-то из животных удается найти новый дом, кто-то уходит на волонтерские передержки, кто-то выпускается обратно на улицу.",
+        "contacts": "По всем вопросам обращайтесь в телеграм чат https://t.me/walkthedog_lemur",
+        "schedule_link": "https://t.me/walkthedog_lemur",
         "sys_info": {
             "callback_data_info": "info_shelter_8",
             "callback_data_enroll": "enroll_shelter_8",
